@@ -1,0 +1,268 @@
+body {
+    background-color: rgb(50, 50, 50);
+}
+
+header {
+    
+    background-color: yellow;
+    border-radius: 20px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header span {
+    border-radius: 20px;
+    background-color: rgb(50, 50, 50);
+    padding: 20px;
+    font-size: 2em;
+    color: yellow;
+}
+header span:hover{
+    cursor:pointer;
+    border:5px solid rgb(50, 50, 50);
+    background-color: yellow;
+    color: rgb(50, 50, 50);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header p {
+    font-size: 2em;
+    color: rgb(50, 50, 50);
+}
+
+.home {
+    max-width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home h1{
+  
+    color:yellow;
+    margin:auto ;
+
+}
+.taskcard {
+    background-color: yellow;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.taskcard span {
+    border-radius: 18px;
+    border:5px solid yellow;
+    background-color: rgb(50, 50, 50);
+    padding: 20px;
+    color: yellow;
+    position: absolute;
+    bottom:0;
+    right: 0;
+}
+
+.taskcard span:hover {
+    cursor:pointer;
+    border:5px solid rgb(50, 50, 50);
+    background-color: yellow;
+    color: rgb(50, 50, 50);
+}
+
+.addtask {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.addtask form {
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid rgb(50, 50, 50);
+    max-width: 400px; 
+    width: 100%;
+}
+
+.addtask label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.addtask input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.addtask button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+.addtask button:hover {
+    background-color: rgb(32, 31, 31);
+    color: yellow;
+}
+.error{
+    background-color: rgb(245, 145, 145);
+    border-radius: 20px;
+    border:3px solid red;
+    color: red;
+    margin:10px;
+    padding:10px;
+}
+
+.login {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.login form {
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid rgb(50, 50, 50);
+    max-width: 400px; 
+    width: 100%;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+.login button:hover {
+    background-color: rgb(32, 31, 31);
+    color: yellow;
+}
+.login a {
+    
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(50, 50, 50);
+    color: yellow;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+   
+}
+
+.register {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.register form {
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid rgb(50, 50, 50);
+    max-width: 400px; 
+    width: 100%;
+}
+
+.register label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.register input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.register button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+.register button:hover {
+    background-color: rgb(32, 31, 31);
+    color: yellow;
+}
+.register a {
+    
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(50, 50, 50);
+    color: yellow;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+   
+}
+
+.logout{
+    padding: 20px;
+    background-color: rgb(50, 50, 50);
+    color: yellow;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.logout:hover{
+    background-color: yellow;
+    color: rgb(50, 50, 50);
+}
