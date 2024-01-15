@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const NewTask = () => {
   const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
+  const [start_date, setStart_date] = useState('');
+  const [end_date, setEnd_date] = useState('');
   const [selectedUser, setSelectedUser] = useState('');
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
@@ -41,7 +42,7 @@ const NewTask = () => {
 
     const response = await fetch('http://localhost:4000/api/tasks', {
       method: 'POST',
-      body: JSON.stringify({ title, date, assigned_user: selectedUser }),
+      body: JSON.stringify({ title, start_date, end_date, assigned_user: selectedUser }),
       headers: {
         'Authorization': `Bearer ${user.token}`,
         'Content-Type': 'application/json'
@@ -54,7 +55,8 @@ const NewTask = () => {
       setError(json.error);
     } else {
       setError(null);
-      setDate('');
+      setStart_date('');
+      setEnd_date('')
       setTitle('');
       setSelectedUser('');
       navigateTo('/');
@@ -72,11 +74,18 @@ const NewTask = () => {
           value={title}
         />
 
-        <label>Date:</label>
+        <label>start date:</label>
         <input
           type='date'
-          onChange={(e) => setDate(e.target.value)}
-          value={date}
+          onChange={(e) => setStart_date(e.target.value)}
+          value={start_date}
+        />
+
+         <label>end date:</label>
+        <input
+          type='date'
+          onChange={(e) => setEnd_date(e.target.value)}
+          value={end_date}
         />
 
         <label>Assign to:</label>

@@ -7,6 +7,7 @@ const getTasks = async(req , res) => {
         const user_id = req.user._id
         const task = await Task.find({assigned_user: user_id})
         res.status(200).json(task)
+      
     }
     catch(error){
         res.status(500).json({error:error.message})
@@ -14,9 +15,9 @@ const getTasks = async(req , res) => {
 }
 
 const postTask = async(req , res) => {
-    const {title , date , assigned_user ,task_status} = req.body
+    const {title , start_date , end_date , assigned_user ,task_status} = req.body
 
-    if(!title || !date || !assigned_user ) {
+    if(!title || !start_date || !end_date || !assigned_user ) {
         return res.status(400).json({error: 'please fill out all fields'})
     }
 
@@ -24,8 +25,10 @@ const postTask = async(req , res) => {
     try{
        // const user_id = req.user._id
 
-        const task = await Task.create({title , date ,assigned_user , task_status}) // user_id
+        const task = await Task.create({title , start_date , end_date ,assigned_user , task_status}) // user_id
         res.status(201).json(task)
+       
+
     }
     catch(error){
         res.status(500).json({error: error.message})

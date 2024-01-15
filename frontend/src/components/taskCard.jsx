@@ -1,6 +1,8 @@
 import { useTaskContext } from "../hooks/useTaskContext";
 import { useUserContext } from "../hooks/useUserContext";
 
+
+ 
 const TaskCard = ({task}) => {
     const {user} = useUserContext()
     const {dispatch} = useTaskContext()
@@ -31,12 +33,15 @@ const TaskCard = ({task}) => {
         handleUpdate('completed')
       }
     
+     
     return(
 
         <div className="taskcard">
             <h2>{task.title}</h2>
-            <p>{task.date}</p>
-           <p>{task.task_status}</p>
+            <p>start date: {new Date(task.start_date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <p>end date: {new Date(task.end_date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+           <p>status: {task.task_status}</p>
         <button onClick={handleComplete}>Complete</button>
         
         </div>
