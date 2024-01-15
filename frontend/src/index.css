@@ -70,8 +70,12 @@ header p {
     border-left:20px solid rgb(43, 255, 43);
 }
 
+.taskcard.failed{
+    border-left:20px solid rgb(246, 0, 0);
+}
+
 .taskcard:hover {
-    transform: scale(1.02); 
+    transform: scale(1.05); 
     z-index: 2; 
 }
 
