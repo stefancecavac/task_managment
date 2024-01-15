@@ -1,3 +1,4 @@
+
 import { useTaskContext } from "../hooks/useTaskContext";
 import { useUserContext } from "../hooks/useUserContext";
 
@@ -6,6 +7,7 @@ import { useUserContext } from "../hooks/useUserContext";
 const TaskCard = ({task}) => {
     const {user} = useUserContext()
     const {dispatch} = useTaskContext()
+
 
     const handleUpdate = async (updatedStatus) => {
 
@@ -26,6 +28,7 @@ const TaskCard = ({task}) => {
     
         if (response.ok) {
           dispatch({ type: 'UPDATE_TASK', payload: json });
+        
         }
       }
       
@@ -36,7 +39,7 @@ const TaskCard = ({task}) => {
      
     return(
 
-        <div className="taskcard">
+        <div className={`taskcard ${task.task_status ==='completed'  ? 'completed' : ''}`}>
             <h2>{task.title}</h2>
             <p>start date: {new Date(task.start_date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
             <p>end date: {new Date(task.end_date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</p>

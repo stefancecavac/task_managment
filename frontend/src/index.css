@@ -9,7 +9,7 @@ header {
     margin: auto;
     padding: 10px;
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: space-between;
 }
 
@@ -56,7 +56,7 @@ header p {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    box-shadow: 2px  2px 2px;
+    box-shadow: 2px  2px 5px;
     border-radius: 20px;
     border-left:20px solid yellow;
     margin: 10px;
@@ -66,6 +66,9 @@ header p {
     z-index: 1; 
     
    }
+.taskcard.completed{
+    border-left:20px solid rgb(43, 255, 43);
+}
 
 .taskcard:hover {
     transform: scale(1.02); 

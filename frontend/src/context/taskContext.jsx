@@ -22,7 +22,7 @@ export const TaskReducer = (state, action) => {
             }
             case 'UPDATE_TASK':
                 return {
-                  tasks: state.tasks.map((w) => (w._id === action.payload._id ? action.payload : w))
+                    tasks: state.tasks.map((w) => (w._id === action.payload._id ? action.payload : w))
                 }
 
         default:
@@ -33,9 +33,9 @@ export const TaskReducer = (state, action) => {
 
 export const TaskContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(TaskReducer, {
-        tasks: null
+        tasks: []
     })
-
+    
     return (
         <TaskContext.Provider value={{ ...state, dispatch }}>
             {children}

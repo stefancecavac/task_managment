@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useUserContext } from "../hooks/useUserContext";
 import { useNavigate } from "react-router-dom";
+import { useTaskContext } from "../hooks/useTaskContext";
 
 const NewTask = () => {
+  const {dispatch} = useTaskContext()
   const [title, setTitle] = useState('');
   const [start_date, setStart_date] = useState('');
   const [end_date, setEnd_date] = useState('');
@@ -13,7 +15,7 @@ const NewTask = () => {
   const navigateTo = useNavigate();
 
   useEffect(() => {
-    // Fetch the list of users to populate the dropdown
+    
     const fetchUsers = async () => {
       try {
         const response = await fetch('http://localhost:4000/api/users', {
@@ -54,6 +56,7 @@ const NewTask = () => {
     if (!response.ok) {
       setError(json.error);
     } else {
+      dispatch({ type: 'CREATE_TASKS', payload: json })
       setError(null);
       setStart_date('');
       setEnd_date('')
