@@ -32,7 +32,7 @@ const Home = () => {
 
     return(
         <div className="home">
-            <h1>My task:</h1>
+            <h1>My tasks:</h1>
             {tasks && tasks.map((task) => (
                 <TaskCard key={task._id} task={task}></TaskCard>
             ))}

@@ -1,34 +1,44 @@
-import {useTaskContext} from '../hooks/useTaskContext'
-import { useUserContext } from '../hooks/useUserContext'
+import { useTaskContext } from "../hooks/useTaskContext";
+import { useUserContext } from "../hooks/useUserContext";
 
 const TaskCard = ({task}) => {
-const {dispatch} = useTaskContext()
-const {user} = useUserContext()
+    const {user} = useUserContext()
+    const {dispatch} = useTaskContext()
 
-    const submit = async() => {
-        const response = await fetch('http://localhost:4000/api/tasks/'+task._id, {
+    const handleUpdate = async (updatedStatus) => {
 
-            method: 'DELETE', 
-            headers: {
-                'Authorization' : `Bearer ${user.token}`,
-                'Content-Type': 'application/json'
-            }
-        })
-        const json = await response.json()
-        if(response.ok){
-            dispatch({type: 'DELETE_TASKS', payload: json })
-          
+        if (!user) {
+          return;
         }
-
-    }
-
+    
+        const response = await fetch('http://localhost:4000/api/tasks/' + task._id, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`,
+          },
+          body: JSON.stringify({ task_status: updatedStatus }),
+        });
+    
+        const json = await response.json();
+    
+        if (response.ok) {
+          dispatch({ type: 'UPDATE_TASK', payload: json });
+        }
+      }
+      
+      const handleComplete = async() => {
+        handleUpdate('completed')
+      }
+    
     return(
 
         <div className="taskcard">
             <h2>{task.title}</h2>
             <p>{task.date}</p>
-           
-        <span onClick={submit}>delete</span>
+           <p>{task.task_status}</p>
+        <button onClick={handleComplete}>Complete</button>
+        
         </div>
     )
 }

@@ -14,7 +14,7 @@ const getTasks = async(req , res) => {
 }
 
 const postTask = async(req , res) => {
-    const {title , date , assigned_user} = req.body
+    const {title , date , assigned_user ,task_status} = req.body
 
     if(!title || !date || !assigned_user ) {
         return res.status(400).json({error: 'please fill out all fields'})
@@ -24,7 +24,7 @@ const postTask = async(req , res) => {
     try{
        // const user_id = req.user._id
 
-        const task = await Task.create({title , date ,assigned_user}) // user_id
+        const task = await Task.create({title , date ,assigned_user , task_status}) // user_id
         res.status(201).json(task)
     }
     catch(error){
@@ -54,4 +54,29 @@ const deleteTask = async(req, res) => {
     }
 }
 
-module.exports = {getTasks , postTask , deleteTask}
+const updateTask = async (req, res) => {
+    const { id } = req.params;
+    const { task_status} = req.body;
+
+    try {
+        const task = await Task.findOneAndUpdate(
+            { _id: id },
+            {task_status , updatedAt: Date.now() },
+            { new: true }
+        );
+
+        if (!task) {
+            return res.status(404).json({ message: 'No matching task found' });
+        }
+
+        res.status(200).json(task);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+
+
+
+module.exports = {getTasks , postTask , deleteTask ,updateTask}

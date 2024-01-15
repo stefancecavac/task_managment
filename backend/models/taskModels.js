@@ -18,6 +18,11 @@ const taskSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'employee',
         required: true
+    },
+    task_status:{
+        type:String,
+        enum:["in progress" , 'completed' , 'failed'],
+        default: 'in progress'
     }
     
     
