@@ -43,6 +43,34 @@ header p {
     
 }
 
+.buttons{
+    background-color:rgb(46, 46, 157);
+    display: flex;
+    justify-content: center;
+    margin:10px;
+    padding:10px;
+    border-radius: 20px;
+    
+}
+.buttons button{
+    border-radius: 20px;
+    border:2px solid white;
+    margin:0   10px;
+    padding:10px;
+    color:rgb(46, 46, 157);
+}
+
+.buttons button:hover{
+    background-color:rgb(46, 46, 157) ;
+    border:2px solid white;
+    color:white
+}
+
+
+.filter-pending{
+   justify-content: center;
+}
+
 .home-main {
     flex:3;
     background-color: #ccc;

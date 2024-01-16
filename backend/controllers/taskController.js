@@ -14,6 +14,39 @@ const getTasks = async(req , res) => {
     }
 }
 
+const getPendingTask = async(req , res) => {
+
+    try {
+        const task = await Task.find({task_status: 'in progress'})
+        res.status(200).json(task)
+    }
+    catch(error){
+        res.status(500).json({error:error.message})
+    }
+}
+
+const getCompletedTask = async(req , res) => {
+
+    try {
+        const task = await Task.find({task_status: 'completed'})
+        res.status(200).json(task)
+    }
+    catch(error){
+        res.status(500).json({error:error.message})
+    }
+}
+
+const getFailedTask = async(req , res) => {
+
+    try {
+        const task = await Task.find({task_status: 'failed'})
+        res.status(200).json(task)
+    }
+    catch(error){
+        res.status(500).json({error:error.message})
+    }
+}
+
 const postTask = async(req , res) => {
     const {title , start_date , end_date , assigned_user ,task_status} = req.body
 
@@ -82,4 +115,4 @@ const updateTask = async (req, res) => {
 
 
 
-module.exports = {getTasks , postTask , deleteTask ,updateTask}
+module.exports = {getTasks , postTask , deleteTask ,updateTask ,getPendingTask , getCompletedTask , getFailedTask}
