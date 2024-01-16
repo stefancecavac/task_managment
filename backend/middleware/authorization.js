@@ -2,12 +2,7 @@ const authorize = (requiredRole) => {
     return (req, res, next) => {
       
       const user = req.user;
-      console.log(user)
      
-
-      console.log(requiredRole)
-  
-   
       if (user.role === requiredRole) {
        
         next();
