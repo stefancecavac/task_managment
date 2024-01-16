@@ -3,13 +3,13 @@ body {
 }
 
 header {
-    
+
     background-color: rgb(46, 46, 157);
     border-radius: 20px;
     margin: auto;
     padding: 10px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -20,11 +20,12 @@ header span {
     font-size: 2em;
     color: white;
 }
-header span:hover{
-    cursor:pointer;
+
+header span:hover {
+    cursor: pointer;
 
     background-color: white;
-    color:rgb(46, 46, 157);
+    color: rgb(46, 46, 157);
 }
 
 header a {
@@ -37,53 +38,126 @@ header p {
 }
 
 .home {
+
+    display: flex;
+    
+}
+
+.home-main {
+    flex:3;
     background-color: #ccc;
     border-radius: 20px;
-    margin: 50px;
-    padding:20px;
+   margin:50px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+   
 }
 
-.home h1{
-  
-    color:rgb(46, 46, 157);
-    margin:auto ;
+.home-main h1 {
+
+    color: rgb(46, 46, 157);
+    margin: auto;
 
 }
+
 .taskcard {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    box-shadow: 2px  2px 5px;
+    box-shadow: 2px 2px 5px;
     border-radius: 20px;
-    border-left:20px solid yellow;
+    border-left: 20px solid yellow;
     margin: 10px;
-    padding:5px;
+    padding: 5px;
     position: relative;
-    transition: transform 0.2s ease-in-out; 
-    z-index: 1; 
-    
-   }
-.taskcard.completed{
-    border-left:20px solid rgb(43, 255, 43);
+    transition: transform 0.2s ease-in-out;
+    z-index: 1;
+
 }
 
-.taskcard.failed{
-    border-left:20px solid rgb(246, 0, 0);
+.taskcard.completed {
+    border-left: 20px solid rgb(43, 255, 43);
+}
+
+.taskcard.failed {
+    border-left: 20px solid rgb(246, 0, 0);
 }
 
 .taskcard:hover {
-    transform: scale(1.05); 
-    z-index: 2; 
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.home-calendar {
+    flex:1;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 20px;
+    max-width: 30%;
+}
+
+.react-calendar{
+    border-radius: 20px;
+    
+    
 }
 
 
+.react-calendar__navigation {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__navigation button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out;
+}
+.react-calendar__navigation button:hover{
+    background-color:#46a7f5;
+    color: white;
+   
+}
+
+.react-calendar__month-view__weekdays {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: #46a7f5;
+    padding: 5px;
+    
+}
+
+.react-calendar__tile {
+    padding: 5px;
+    margin:5px;
+    border-radius: 10px;
+    border: none;
+    
+}
+
+.react-calendar__tile--now {
+    background-color: #46a7f5;
+    color: white;
+}
 
 
 .addtask {
-   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +169,7 @@ header p {
     padding: 20px;
     border-radius: 10px;
     border: 3px solid rgb(46, 46, 157);
-    max-width: 400px; 
+    max-width: 400px;
     width: 100%;
 }
 
@@ -116,7 +190,7 @@ header p {
 .addtask button {
     width: 100%;
     padding: 10px;
-    background-color:rgb(46, 46, 157);
+    background-color: rgb(46, 46, 157);
     color: white;
     border: none;
     border-radius: 5px;
@@ -129,24 +203,26 @@ header p {
     background-color: rgb(28, 28, 101);
     color: white;
 }
-.error{
+
+.error {
     background-color: rgb(245, 145, 145);
     border-radius: 20px;
-    border:3px solid red;
+    border: 3px solid red;
     color: red;
-    margin:10px;
-    padding:10px;
+    margin: 10px;
+    padding: 10px;
 }
 
 .login {
-   
+
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60vh;
 }
-.login h1{
-    color:rgb(46, 46, 157);
+
+.login h1 {
+    color: rgb(46, 46, 157);
 }
 
 .login form {
@@ -154,7 +230,7 @@ header p {
     padding: 20px;
     border-radius: 10px;
     border: 4px solid rgb(46, 46, 157);
-    max-width: 400px; 
+    max-width: 400px;
     width: 100%;
 }
 
@@ -188,8 +264,9 @@ header p {
     background-color: rgb(28, 28, 101);
     color: white;
 }
+
 .login a {
-    
+
     width: 100%;
     padding: 10px;
     background-color: rgb(46, 46, 157);
@@ -199,18 +276,19 @@ header p {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-   
+
 }
 
 .register {
-   
+
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60vh;
 }
-.register h1{
-    color:rgb(46, 46, 157);
+
+.register h1 {
+    color: rgb(46, 46, 157);
 }
 
 .register form {
@@ -218,7 +296,7 @@ header p {
     padding: 20px;
     border-radius: 10px;
     border: 3px solid rgb(46, 46, 157);
-    max-width: 400px; 
+    max-width: 400px;
     width: 100%;
 }
 
@@ -252,8 +330,9 @@ header p {
     background-color: rgb(28, 28, 101);
     color: white;
 }
+
 .register a {
-    
+
     width: 100%;
     padding: 10px;
     background-color: rgb(46, 46, 157);
@@ -263,10 +342,10 @@ header p {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-   
+
 }
 
-.logout{
+.logout {
     padding: 20px;
     background-color: white;
     color: rgb(46, 46, 157);
@@ -274,7 +353,7 @@ header p {
     cursor: pointer;
 }
 
-.logout:hover{
+.logout:hover {
     background-color: rgb(46, 46, 157);
     color: white;
 }
