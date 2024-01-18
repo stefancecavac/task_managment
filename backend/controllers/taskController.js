@@ -17,7 +17,9 @@ const getTasks = async(req , res) => {
 const getPendingTask = async(req , res) => {
 
     try {
-        const task = await Task.find({task_status: 'in progress'})
+        const user_id = req.user._id
+
+        const task = await Task.find({task_status: 'in progress' ,assigned_user: user_id })
         res.status(200).json(task)
     }
     catch(error){
@@ -28,7 +30,8 @@ const getPendingTask = async(req , res) => {
 const getCompletedTask = async(req , res) => {
 
     try {
-        const task = await Task.find({task_status: 'completed'})
+        const user_id = req.user._id
+        const task = await Task.find({task_status: 'completed' ,assigned_user: user_id})
         res.status(200).json(task)
     }
     catch(error){
@@ -39,7 +42,8 @@ const getCompletedTask = async(req , res) => {
 const getFailedTask = async(req , res) => {
 
     try {
-        const task = await Task.find({task_status: 'failed'})
+        const user_id = req.user._id
+        const task = await Task.find({task_status: 'failed' ,assigned_user: user_id})
         res.status(200).json(task)
     }
     catch(error){
